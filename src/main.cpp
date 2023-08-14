@@ -9,7 +9,18 @@
 
 /*Gör en funktion som skapar en slumpmässig fyrsiffrig portkod med följande villkor:
 - Koden får börja med vilken siffra som helst, inklusive 0, men inte med 1
-- Ingen siffra i koden får finnas mer än två gånger. 2234 är ok men inte 2232.*/
+- Ingen siffra i koden får finnas mer än två gånger. 2234 är ok men inte 2232.
+
+Knapparna på en koddosa sitter enligt följande:
+1 2 3
+4 5 6
+7 8 9
+  0
+
+Villkoret är att varje siffra ska ligga intill siffran före. D.v.s. efter siffran 2 får det bara komma 1, 3, 4, 5, 6, eller 2.
+Efter 7 får det bara komma 4, 5, 8, 0 eller 7, osv.
+
+Koden 5968 är ok. Koden 5961 är inte ok.*/
 
 int main() {
     std::srand(std::time(nullptr)); //Use current time as seed for random generator.
