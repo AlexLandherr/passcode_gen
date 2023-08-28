@@ -19,7 +19,6 @@ Knapparna på en koddosa sitter enligt följande:
 
 Villkoret är att varje siffra ska ligga intill siffran före. D.v.s. efter siffran 2 får det bara komma 1, 3, 4, 5, 6, eller 2.
 Efter 7 får det bara komma 4, 5, 8, 0 eller 7, osv.
-
 Koden 5968 är ok. Koden 5961 är inte ok.*/
 
 int main() {

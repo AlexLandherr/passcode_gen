@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <limits>
 #include <stdexcept>
+#include <vector>
 
 namespace validator {
     bool not_start_with(std::string num_str, char forbidden) {
@@ -41,5 +42,12 @@ namespace validator {
         }
     
         return result;
+    }
+
+    bool all_adjacent(std::string num_as_str) {
+        const std::vector<std::vector<int>> v = {{1, 2, 3},
+                                                 {4, 5, 6},
+                                                 {7, 8, 9},
+                                                    {0}};
     }
 }
