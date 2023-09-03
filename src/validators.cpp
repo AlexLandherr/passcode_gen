@@ -45,9 +45,16 @@ namespace validator {
     }
 
     bool all_adjacent(std::string num_as_str) {
-        const std::vector<std::vector<int>> v = {{1, 2, 3},
-                                                 {4, 5, 6},
-                                                 {7, 8, 9},
-                                                    {0}};
+        //Check that all digits in number string is 'adjacent' to the preceding one.
+        const std::vector<std::vector<int>> valid_presses = {{0, 7, 8, 9},
+                                                             {1, 2, 4, 5},
+                                                             {2, 1, 3, 4, 5, 6},
+                                                             {3, 2, 5, 6},
+                                                             {4, 1, 2, 5, 8, 7},
+                                                             {5, 1, 2, 3, 4, 6, 7, 8, 9},
+                                                             {6, 3, 2, 5, 8, 9},
+                                                             {7, 4, 5, 8, 0},
+                                                             {8, 7, 4, 5, 6, 9, 0},
+                                                             {9, 0, 8, 5, 6}};
     }
 }
