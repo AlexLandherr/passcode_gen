@@ -42,7 +42,9 @@ int main() {
             }
         }
         try {
-            if (validator::not_start_with(random_num_str, banned_start_char) && !validator::exceeds_max_occurrence(random_num_str, max_occurrence_count)) {
+            if (validator::not_start_with(random_num_str, banned_start_char) &&
+            !validator::exceeds_max_occurrence(random_num_str, max_occurrence_count) &&
+            validator::all_adjacent(random_num_str)) {
                 std::cout << random_num_str << '\n';
                 random_num_count++;
             }

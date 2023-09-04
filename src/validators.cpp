@@ -56,5 +56,28 @@ namespace validator {
                                                              {7, 4, 5, 8, 0},
                                                              {8, 7, 4, 5, 6, 9, 0},
                                                              {9, 0, 8, 5, 6}};
+        
+        std::vector<std::string> digits;
+        std::vector<bool> all_pairs_good;
+
+        //Breaking up number string into constituent digits.
+        for (int i = 0; i < static_cast<int>(num_as_str.size()); i++) {
+            std::string sub = num_as_str.substr(i, 1);
+            digits.push_back(sub);
+        }
+
+        //Extracting two digits at a time and checking whether the second digit in each pair is 'adjacent' to the preceding one.
+        for (int k = 0; k < static_cast<int>(digits.size() - 1); k++) {
+            int a = std::stoi(digits[k]);
+            int b = std::stoi(digits[k + 1]);
+            if (std::find(std::begin(valid_presses[a]), std::end(valid_presses[a]), b) != std::end(valid_presses[a])) {
+                all_pairs_good.push_back(true);
+            } else {
+                all_pairs_good.push_back(false);
+            }
+        }
+
+        //Checking that all bools in 'all_pairs_good' are true.
+        return std::all_of(all_pairs_good.begin(), all_pairs_good.end(), [](bool b) { return b; });
     }
 }
